@@ -1,0 +1,2 @@
+# arvoregenealogica
+Os sistemas de árvore genealógica, são baseados em casais héteros que nunca separam   Eventualmente, um casal tem filhos, depois separam, e casam novamente tendo outros filhos NxN  Montar um site que você possa se logar (Google, Facebook ou e-mail e senha) e cadastrar sua árvore genealógica e o sistema sinalize a possibilidade de primos/parentes quando outra pessoa cadastrar pessoas com o mesmo nome que está na sua árvore
