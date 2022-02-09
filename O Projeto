@@ -1,0 +1,36 @@
+ Os sistemas de árvore genealógica, são baseados em casais héteros que nunca separam 
+ Eventualmente, um casal tem filhos, depois separam, e casam novamente tendo outros filhos NxN
+ Montar um site que você possa se logar (Google, Facebook ou e-mail e senha) e cadastrar sua árvore genealógica e o sistema sinalize a possibilidade de 
+ primos/parentes quando outra pessoa cadastrar pessoas com o mesmo sobrenome* que está na sua árvore
+ Uma rede social nova 
+
+# Critérios de aceite: Cadastrar Usuários, Logar, vinculo de pessoas pelo sobrenome + Nome da Mãe ou Pai(Opcional)
+
+#  Local Nascimento:
+#  Naturalidade:
+#  Cidade que reside atualmente
+#  data de nascimento
+#  Grau de parentesco
+#  Conguge Atual
+
+#  Renan lopes - 
+#  Esposa : Maria Lopes
+#  filhos: 1 Lucas Lopes, Andre Lopes
+
+
+# Renan Lopes
+# Esposa: Ana Silva
+# Filho : Pedro Lopes
+
+# Bruno José
+# Esposa: Ana Silva
+# Filho : Thiago Silva
+
+#  repositorio: https://github.com/Tvitor/arvoregenealogica 
+
+
+Branch master
+Develop
+git branch inicio
+
+- develop - git branch Crud
