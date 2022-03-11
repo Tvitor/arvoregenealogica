@@ -5,7 +5,7 @@ class GetUser {
     this.getUsers = async (req, res, next) => {
       let user;
       try {
-        user = await User.findById(req.params.id);
+        user = await User.findById(req.userId).select('-password -__v');
         if (user == null) {
           return res.status(404).json({
             error: true,

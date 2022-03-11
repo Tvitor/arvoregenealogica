@@ -11,12 +11,11 @@ const router = new Router();
 router.post('/', TokenController.store);
 
 // User Routes
-router.get('/usuario', loginRequired, userController.index); // Lista todos os usuaris
-router.get('/usuario/:id', getUser.getUsers, userController.show); // lista 1 usuario
+router.get('/usuario', userController.index); // Lista todos os usuarios
+// router.get('/usuario/:id', getUser.getUsers, userController.show);lista 1 usuario(desnecessário?)
 
 router.post('/usuario', userController.store);
-
-router.patch('/usuario/:id', getUser.getUsers, userController.update);
-router.delete('/usuario/:id', getUser.getUsers, userController.delete);
+router.patch('/usuario/', loginRequired, getUser.getUsers, userController.update);
+router.delete('/usuario/', loginRequired, getUser.getUsers, userController.delete);
 
 module.exports = router;

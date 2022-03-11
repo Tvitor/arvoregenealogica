@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
-function checkLogin(req, res, next) {
+async function checkLogin(req, res, next) {
   const { authorization } = req.headers;
 
   if (!authorization) {
@@ -15,6 +16,16 @@ function checkLogin(req, res, next) {
   try {
     const dados = jwt.verify(token, process.env.TOKEN_SECRET);
     const { id, email } = dados;
+    // verifica se não houve alteração nos dados do usuario
+    const user = await User.findOne({ id, email });
+
+    if (!user) {
+      return res.status(401).json({
+        error: true,
+        message: 'Usuario inválido.',
+      });
+    }
+
     // add as informações na requisição para todas as paginas que usem o middleware terem acesso.
     req.userId = id;
     req.userEmail = email;

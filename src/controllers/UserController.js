@@ -6,9 +6,7 @@ const user = require('../models/User');
 class UserController {
   async index(req, res) {
     try {
-      console.log(req.userId);
-      console.log(req.userEmail);
-      const users = await user.find();
+      const users = await user.find().select('-password -__v');
       return res.json(users);
     } catch (e) {
       return res.status(500).json({
@@ -18,9 +16,9 @@ class UserController {
     }
   }
 
-  async show(req, res) {
-    res.send(res.user);
-  }
+  // async show(req, res) {
+  //   res.send(res.user);
+  // }
 
   async store(req, res) {
     // mover este bloco para o model
@@ -90,8 +88,21 @@ class UserController {
       return res.status(200).json({
         error: false,
         message: 'Usuario cadastrado com sucesso',
+        usuario: {
+          nome,
+          sobrenome,
+          email,
+          telefone,
+          naturalidade,
+          nacionalidade,
+          cidadeResidencia,
+          dataNascimento,
+          nomeConjugeAtual,
+          sobreNomeConjugeAtual,
+        },
       });
     });
+    return null;
   }
 
   async update(req, res) {
