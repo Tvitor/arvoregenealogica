@@ -1,21 +1,21 @@
 const { Router } = require('express');
 const getUser = require('../middlewares/GetUser');
 
-// import userController from '../controllers/UserController';
-
 const userController = require('../controllers/UserController');
-
-// const User = require('../models/User');
+const TokenController = require('../controllers/TokenController');
+const loginRequired = require('../middlewares/loginRequired');
 
 const router = new Router();
 
-// router.get('/', userController.index);
+// Home Routes
+router.post('/', TokenController.store);
 
-// router.get('/', userController.show);
+// User Routes
+router.get('/usuario', loginRequired, userController.index); // Lista todos os usuaris
+router.get('/usuario/:id', getUser.getUsers, userController.show); // lista 1 usuario
 
-router.get('/usuario', userController.index);
 router.post('/usuario', userController.store);
-router.get('/usuario/:id', getUser.getUsers, userController.show);
+
 router.patch('/usuario/:id', getUser.getUsers, userController.update);
 router.delete('/usuario/:id', getUser.getUsers, userController.delete);
 

@@ -6,6 +6,8 @@ const user = require('../models/User');
 class UserController {
   async index(req, res) {
     try {
+      console.log(req.userId);
+      console.log(req.userEmail);
       const users = await user.find();
       return res.json(users);
     } catch (e) {
